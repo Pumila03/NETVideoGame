@@ -50,9 +50,13 @@ The available commands are:
 - ```q``` Quit the game in disgrace
 - ```h``` Display help
 
-## Authors (A17):
+## Authors :
 
-- Siméon Descorps
-- Aala Ajmaime
-- Eliott Peaudeau
+Directed by __Prof. ESNARD Aurelien__
+
+My team
+
+- Siméon
+- Aala
+- Eliott
 
