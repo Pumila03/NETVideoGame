@@ -17,47 +17,50 @@
 ```                 
 <img src="res/img_presa.png"  width="200" height="200">  
 
-## Présentation 
-Voici le jeu Net,
+## Overview 
+Welcome to Net, a puzzle game!
 
-Ce jeu utilise une grille de 5 cases sur 5, où chaque case contient des pièces représentant des tuyaux ou des câbles. Ces pièces peuvent être pivotées d'un quart de tour à droite ou à gauche. Elles se déclinent en différentes formes : des terminaisons, des segments droits, des coudes, des jonctions en T ou des croix, avec des orientations vers le nord, l'est, le sud ou l'ouest. Chaque pièce est construite à partir de bras partant du centre vers ses bords, appelés demi-arêtes.
-Bon courage !
+This game uses a 5x5 grid where each tile contains a piece representing a pipe or a cable. These pieces can be rotated a quarter turn either to the right or to the left. They come in different shapes: ends, straight segments, elbows, T-junctions, or crosses, oriented in one of the four cardinal directions (North, East, South, West). Each piece is composed of arms extending from the center to its edges, called half-edges.
+
+Good luck!
+
+*Again, the goal isn't to make an amazing game but rather to learn how to code in C, master Git, explore web technologies, and use CMake properly. All development files are fully accessible so you can peek behind the scenes.*
 
 <hr style="border: 5px solid gray;" color="gray"> 
 <br>
 <br>
 
-# Version texte
+# Text Version
 
-## Jouer
+## How to Play
 
-Il vous est proposé différentes manières de jouer au jeu. Afin de pouvoir obtenir des exécutables pour jouer, il faudra exécuter les commandes suivantes :
+Several ways to play are available. To compile the game executables, run the following commands:
 ```
 mkdir build
 cd build
 cmake ..
 make
 ```
-À partir de là, deux exécutables seront créés :
+Two executables will be created: :
 
-- Pour créer le jeu de base :
+- To play a pre-made game:
 
 ```./game_text [game_to_load]```
 
-- Pour créer un jeu aléatoire :
+- To generate a random game:
 
 ```./game_random <nb_rows> <nb_cols> <wrapping> <nb_empty> <nb_extra> <shuffle> [<filename>]```
 
-## Les commandes
+## Commands
 
-Les différentes commandes sont :
-- ```c I J``` Tourne dans le sens horaire la pièce à la ligne I et à la colonne J
-- ```a I J``` Tourne dans le sens anti-horaire la pièce à la ligne I et à la colonne J
-- ```r``` Permet de réinitialiser la grille de jeu
-- ```z``` Revenir en arrière (Undo)
-- ```y``` Revenir en avant (Redo)
-- ```q``` Permet de quitter à votre grande honte
-- ```h``` Permet d'afficher l'aide
+Here are the available commands:
+- ```c I J``` Rotates the tile at row I, column J clockwise
+- ```a I J``` Rotates the tile at row I, column J counter-clockwise
+- ```r``` Resets the game board
+- ```z``` Undo last move
+- ```y``` Redo last move
+- ```q``` Quit (in shame)
+- ```h``` Display help 
 
 <br>
 <br>
@@ -65,17 +68,17 @@ Les différentes commandes sont :
 <br>
 <br>
 
-# Version Graphique  
+# Graphical Version
 
-Nous avons maintenant une interface graphique pour profiter de notre jeu.
+A graphical interface is available to enjoy the game visually.
 
-Dans notre interface graphique, nous utilisons à plusieurs reprises des effets sonores ainsi qu'une musique d'ambiance. Si vous n'avez pas les bibliothèques nécessaires pour leur utilisation, le jeu se jouera sans son. Sinon, pour accéder à ces fonctionnalités, il est nécessaire de télécharger la bibliothèque SDL_mixer. Voici la commande à entrer dans le terminal Linux :
+This version includes background music and sound effects. If the required libraries are missing, the game will still run silently. To enable audio support, you’ll need to install the SDL_mixer library using the following command on Linux:
 
 ```sudo apt install libsdl2-mixer-dev```
 
-Il est toujours possible de couper le son du jeu en cliquant sur le bouton audio une fois le jeu lancé.
+You can mute/unmute the sound anytime by clicking the audio button in-game.
 
-- Pour jouer à la version graphique de NET : 
+- To play the graphical version of NET: 
 ```
 mkdir build
 cd build
@@ -84,33 +87,42 @@ make
 ./game_sdl
 ```
 
-## Jouer 
+## Gameplay 
 
-Pour jouer, il faut connecter toutes les pièces ensemble.
-- Quand deux pièces sont connectées, leurs couleurs changent, passant du rose au bleu.
-- Une option wrapping est appliquée si la lumière en haut à droite du tableau (notée "w") est allumée en vert.
-- Lorsque le jeu est gagné, toutes les pièces sont bleues et l'information "You win" vous est renvoyée.
-- Il est possible de relancer une partie en générant un nouveau aléatoire avec la touche R !
+Your goal is to connect all the pieces together.
+- When two pieces are connected, their color changes from pink to blue.
+- If the green "w" indicator at the top right of the board is on, the wrapping mode is active.
+- When all pieces are connected (and blue), the "You win" message is shown.
+- Press R to generate a new random game at any time.
 
 
-## Comment jouer  
+## Controls
 
 Voici les différentes commandes pour jouer :
 
-- ```clique GAUCHE``` Tourner la pièce sélectionnée d'un quart de tour vers la gauche
-- ```clique DROIT``` Tourner la pièce sélectionnée d'un quart de tour vers la droite
-- ```Z``` ou **Bouton Z** Revenir en arrière (Undo)
-- ```Y``` ou **Bouton Y** Revenir en avant (Redo)
-- ```H``` ou **Bouton H** Permet d'afficher l'aide
-- ```R```  Permet de réinitialiser la grille de jeu (random)
-- ```S``` Permet d'enregistrer la partie en cours (save) 
-- ```L``` Permet de charger une partie enregistrée (load)
-- ```K``` Permet d'avoir la solution de la partie actuelle
-- ```M``` Permet de mélanger le jeu en cours
-- ```ESC``` Permet de quitter le jeu
+- ```LEFT click``` Rotate the selected tile counter-clockwise
+- ```RIGHT click``` Rotate the selected tile clockwise
+- ```Z``` or **Z button** Undo
+- ```Y``` or **Y button** Redo
+- ```H``` or **H button** Show help
+- ```R```  Reset the board with a new random game
+- ```S``` Save the current game
+- ```L``` Load a saved game
+- ```K``` Show the solution
+- ```M``` Shuffle the board
+- ```ESC``` Quit the game
 
-La touche ```K``` permet de résoudre le jeu. Cependant, certains jeux sont un peu trop complexes pour être résolus. Si, au bout de 10 s, le jeu n'est pas résolu, alors la résolution est arrêtée et un message est affiché. Le message disparaîtra une fois que vous jouerez un nouveau coup."
-Toutes ces fonctionnalités, excepté pour bouger les pièces, sont aussi accessibles comme dans la version texte de notre jeu (touches du clavier).
+The ```K``` key attempts to solve the game automatically. Some puzzles may be too complex. If no solution is found within 10 seconds, the solving process will stop, and a message will appear. The message disappears after your next move.
+
+All of these functions (except moving tiles with the mouse) are also available through keyboard shortcuts, as in the text version.
+
+# Web Version
+
+We’ve deployed the graphical version on the servers of the University of Bordeaux. It is available at:
+
+👉 https://eliott-peaudeau.emi.u-bordeaux.fr/iamsteve
+
+The features are nearly identical to the desktop graphical version.
 
 ## Les auteurs(A17) :
 
