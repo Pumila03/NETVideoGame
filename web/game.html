@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <!-- ********************* html ********************* -->
+
+    <h1 id="title">NET Game</h1>
+
+    <pre id="result"></pre>
+
+    <div id="container">
+        <div id="Read-container">
+            <div class="info-card">
+                Here is the <span class="Maj">NET game</span>.<br>
+                In this game, you need to connect all the pieces together. When two pieces are connected, their colors change from pink to blue.
+            </div>
+        
+            <div class="info-card">
+                If the little light in the top-right corner of the game is on, you are in wrapping mode.
+            </div>
+        
+            <div class="info-card">
+                The <span class="Maj">HELP</span> menu is there to guide you through the different available commands.
+            </div>
+        
+            <div class="info-card">
+                A <span class="Maj">LEFT CLICK</span> rotates a piece clockwise, and a <span class="Maj">RIGHT CLICK</span> rotates it counterclockwise.
+            </div>
+        </div>
+        
+
+        <canvas class="canvas-dec" id='mycanvas' width="600px" height="600px" background><img src="res/BACKGROUNDV2.png"/></canvas>
+        
+    <div id="image-container">
+        <h2 id="help-title">Help Menu</h2>
+        <p id="help-menu">
+        'R': Create a random game <br>
+        'Z': Undo the last move <br>
+        'Y': Redo the last move <br>
+        'K': Solve the game, up to 10 seconds<br>
+        'M': Shuffle the game<br>
+        'S': Save the game<br>
+        'L': Load an existing game<br>
+        </p></div>
+    </div>
+    <hr>
+    <p><em>Made by Aala AJMAIME, Eliott PEAUDEAU and Siméon DESCORPS</em></p>
+    <!-- ********************* script ********************* -->
+
+    <script src="game.js"></script>
+    <script src="demo.js"> </script>
+
+</body>
+
+</html>

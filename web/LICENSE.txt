@@ -1,0 +1,6 @@
+Font utilisé dans le site:
+
+Pixelify Sans
+Copyright 2021 The Pixelify Sans Project Authors
+Licensed under the SIL Open Font License, Version 1.1
+https://github.com/eifetx/Pixelify-Sans
